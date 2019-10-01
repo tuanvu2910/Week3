@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a =[3,4,5,6,2];b =[4,3,8,9,4];c=[5,9,6,11,6];d=[];
+    function minArray(a) {
+        if (a.length == 0)
+            return -1;
+        let min = a[0]
+        for (let i= 1;i<a.length;i++){
+            if (min<a[i]){
+                min = a[i];
+            }
+
+
+        }
+     return min;
+    }
+    let min = minArray(a);
+    let min1 = minArray(b);
+    let min2 = minArray(c);
+    let min3 = minArray(d);
+
+    alert(min);
+    alert(min1);
+    alert(min2);
+    alert(min3);
+
+
+
+</script>
+</html>
