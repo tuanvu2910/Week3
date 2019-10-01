@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset><legend> Chuyển đổi "Meter to Feet"</legend>
+  <table>
+      <tr>
+      <td>Meter</td>
+          <td><input id = "meter" ></td>
+      </tr>
+      <tr>
+          <td>Feet</td>
+          <td><input id = "feet" ></td>
+      </tr>
+      <tr>
+          <td><button id = "converttoF" onclick="converttoF()">converttoF</button></td>
+          <td><button id = "converttoM" onclick="converttoM()">converttoM</button></td>
+      </tr>
+
+
+  </table>
+
+</fieldset>
+<script>
+
+
+    function converttoM() {
+        let  meter = parseInt(document.getElementById("meter").value);
+        let  feet = parseInt(document.getElementById("feet").value);
+              meter = feet*0.305;
+        document.getElementById("meter").value = "";
+        document.getElementById("meter").value += meter ;
+
+    }   function converttoF() {
+        let  meter = parseInt(document.getElementById("meter").value);
+        let  feet = parseInt(document.getElementById("feet").value);
+              feet = meter*3.279;
+        document.getElementById("feet").value = "";
+        document.getElementById("feet").value += feet ;
+
+    }
+
+
+</script>
+</body>
+</html>
