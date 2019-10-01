@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>
+    <label>Fahreheit</label>
+    <input id="inputF" type="text" placeholder="Fahrenheit" oninput="temConverter(this.value)" onchange="temConverter(this.value)">
+
+</p>
+<p>Celsius: <span id="outputCelsius"></span></p>
+<script>
+    function temConverter(a) {
+        a = parseFloat(a);
+        document.getElementById("outputCelsius").innerHTML = (a-32)/1.8;
+
+    }
+</script>
+
+</body>
+</html>
