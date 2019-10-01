@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<input id="inputnumber" >
+<button onclick="increse1()">Increse</button>
+<script>
+    function increse1() {
+        let UpNumber = parseInt(document.getElementById("inputnumber").value);
+        UpNumber += 1 ;
+        document.getElementById("inputnumber").value = "";
+        document.getElementById("inputnumber").value += UpNumber;
+
+
+    }
+
+
+</script>
+</body>
+</html>

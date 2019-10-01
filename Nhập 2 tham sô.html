@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset><legend>2 Tham sô</legend>
+<table>
+    <tr>
+        <td>Number1</td>
+        <td><input id = "Number1"></td>
+    </tr>
+    <tr>
+        <td>Number2</td>
+        <td><input id = "Number2"></td>
+    </tr> <tr>
+        <td><button onclick="Check()">Check</button></td>
+        <td><output id="Sum"></output></td>
+    </tr>
+
+</table>
+    <script>
+        function Check() {
+            let number1 = +document.getElementById("Number1").value;
+            let number2 = +document.getElementById("Number2").value;
+            if (number1 > number2) {
+
+                alert("Không thể thực hiện hành động");
+
+            } else {
+
+                Sum(number1,number2);
+
+            }
+
+        }
+
+            function Sum(number1,number2) {
+
+                let sum = number1 + number2;
+                document.getElementById("Sum").value ="";
+                document.getElementById("Sum").value += sum;
+
+            }
+
+
+
+    </script>
+</fieldset>
+
+
+</body>
+</html>
