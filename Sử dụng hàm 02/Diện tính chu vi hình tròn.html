@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="Acreage()">Acreage</button>
+<input id="Acreage" disabled>
+<button onclick="Perimeter()">Perimeter</button>
+<input id="Perimeter" disabled>
+<script>
+    function Acreage() {
+        let radius = parseFloat(prompt("Bán kính hình tròn là "));
+        let acreage = Math.pow(radius, 2) * 3.14;
+        document.getElementById("Acreage").value+= acreage;
+    }
+    function Perimeter() {
+        let radius = parseFloat(prompt("Bán kính hình tròn là "));
+        let perometer = radius*2*3.14;
+        document.getElementById("Perimeter").value+= perometer;
+    }
+</script>
+</body>
+</html>
