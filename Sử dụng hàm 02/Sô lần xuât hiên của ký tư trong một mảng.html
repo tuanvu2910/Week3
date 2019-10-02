@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập <input id = "input1"></br>
+Số lần xuất hiện<input  disabled id = "output2"></br>
+<button onclick="Create()">Create 100 number</button>
+<button onclick="Check()">Check</button>
+
+    <script>
+        let a = [];
+        let number;
+        let count = 0;
+        function Create() {
+            document.getElementById("output2").value = "";
+            document.getElementById("input1").value = "";
+            document.getElementById("input1").focus();
+            for (i = 0; i < 100; i++) {
+                let b = Math.floor(Math.random() * 20);
+                a.push(b);
+
+
+            }
+            console.log(a);
+        }
+        function Check() {
+            number = +document.getElementById("input1").value;
+            for (j=0;j<=100;j++){
+                if (number==a[j])
+                    count++;
+
+            }
+            document.getElementById("output2").value = count;
+
+
+
+        }
+
+
+    </script>
+</body>
+</html>
