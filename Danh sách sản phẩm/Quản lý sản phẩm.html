@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="disPlay();disPlay2()" background="Theme pml2.jpg">
+<style>
+    .team {
+        color: darkgray;
+    }
+</style>
+<table style="width:100%; bolder-collapse:collapse;" border="1" >
+    <!--dong1-->
+    <tr>
+        <td width = "200" ><img src="PremierLeague.png"/></td>
+        <td style = "text-align:center;"><h1 style ="color: darkgray;" >Premier league 2019/20</h1></td>
+    </tr>
+    <!--dong2-->
+    <tr>
+        <td colspan="2"style="background-color:navy;">
+            <MARQUEE>
+<span style = "color:white;"><h3>WELLCOME TO PREMIERLEAUGE 2019-2020</h3>
+ </span>
+            </MARQUEE>
+        </td>
+        <td></td>
+    </tr>
+    <!--dong3-->
+    <tr>
+        <td style = "vertical-align:top;" >
+            <input id="delete" placeholder="Delete your team you wan't"><botton onclick = Detele()><img src="delete.png"height="20px" width="20px"> </botton>
+            <input id="input" placeholder="Input your team you wan't"><botton onclick = upMore()><img src="up.png"height="20px" width="20px"> </botton>
+            <ul id="list" ></ul>
+
+        </td>
+        <td><table>
+            <tr id="list2">
+
+
+
+            </tr>
+
+        </table>
+
+            <script>
+                let pmlTeam = ["Livepool","Manchester City","Leiceter City","Crystal Place","Arsenal","Everton","ManUtd","Burnley","Sheffield United","Wolverhamton","Southampton"
+                    ,"Brighton & Hove Albion","Norwich City","Aston Villa","Newcastle United","Watford"];
+                let pmlTeamicon =["Liverpool.png","Mancity.png","Leiceter.png","Crystal Place.png","Asenal.png","Everton.png","Manutd.jpg","Burnley.jpg","Sheffield.png","Wolverhampton.png",
+               "Southampton.png","Brighton.png","Norwich.png","Aston Villa.png","Newcastle-United.png","Watford.png"];
+                let text = "";
+                let take;
+                function disPlay() {
+                    document.getElementById("list").innerHTML =""
+                  for(i=0;i<10;i++) {
+
+                      text= "<li class ='team'>"+pmlTeam[i]+"</li>"+"</br>";
+                      document.getElementById("list").innerHTML+= text;
+                  }
+
+
+                }
+                    function upMore() {
+                        take = document.getElementById("input").value;
+                        for (z=0;j<pmlTeam.length;z++) {
+                            if (take == pmlTeam[z]) {
+                               take = pmlTeam[z];
+                            }
+                        }
+                    pmlTeam.push(take);
+
+                        disPlay();
+
+                }
+                function Detele() {
+                    take = document.getElementById("delete").value;
+                   for (j=0;j<pmlTeam.length;j++) {
+                       if (take == pmlTeam[j])
+                       {
+                           pmlTeam.splice(j,1);
+
+                       }
+                   }
+                   disPlay();
+                }
+                    function disPlay2() {
+                        document.getElementById("list2").innerHTML ="";
+                        for(j=0;j<10;j++) {
+
+                            text = "<td>"+"<p>"+'<img src="'+pmlTeamicon[j]+'" height="100px" width="90px">'+"</img>"+"<br>"+"</p>"+"</td>";
+                            document.getElementById("list2").innerHTML += text;
+                        }
+
+                    }
+
+
+
+
+
+
+            </script
+</body>
+</html>
