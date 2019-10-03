@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<fieldset><legend>Temperature Description</legend>
+    <table>
+        <tr>
+            <td> Temperature C</td>
+            <td> <input id="C" ></td>
+        </tr><tr>
+            <td> </td>
+            <td colspan="2"> <button onclick="FreeBack()">FreeBack</button></td>
+        </tr>
+        <tr>
+            <td> Temperature F</td>
+            <td> <input disabled id="F" ></td>
+        </tr>
+        <tr>
+            <td> Temperature K</td>
+            <td> <input disabled id="K" ></td>
+        </tr>
+    </table>
+</fieldset>
+<script>
+
+    let Temperature = function (C) {
+        this.C = C;
+        this.F = function () {
+            return (this.C*1.8)+32;
+        }
+        this.K = function () {
+            return this.C+273.15;
+        }
+
+    };
+    function FreeBack() {
+        let yourC = document.getElementById("C").value;
+        if (yourC<-270){
+            alert("Không nhập giá trị nhỏ hơn -270")
+
+        } else {
+            let TakeC = new Temperature(yourC);
+
+            document.getElementById("F").value = TakeC.F();
+            document.getElementById("K").value = TakeC.K();
+        }
+    }
+</script>
+</body>
+</html>
