@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</html>    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body >
+<button onclick="activity.draw()"> Play</button>
+<button onclick=""> Go!</button>
+<img id="scream" style="position: absolute" width="100" height="100" src="car.png" hidden >
+<canvas id="myCanvas" width="600" height="600"style="border:10px solid;"></canvas>
+<script>
+    const connectCanvas =  document.getElementById("myCanvas");
+    const img = document.getElementById("scream");
+
+
+    let Car = function (width,height,speed) {
+
+        this.width = width;
+        this.height = height;
+        this.speed = 100;
+        this.draw = function () {
+            let ctx = connectCanvas.getContext("2d");
+            ctx.drawImage(img, this.width, this.height, 100, 100);
+        };
+        this.moveLeft = function () {
+            this.width += this.speed ;
+        }
+        this.moveRight = function () {
+            this.width -= this.speed;
+        }
+        this.moveUp = function () {
+            this.height -= this.speed;
+        }
+        this.moveDown = function () {
+            this.height += this.speed;
+        }
+
+
+    };
+
+    let activity = new Car(100,100,10);
+    function control(event) {
+        connectCanvas.getContext("2d").clearRect(0,0,connectCanvas.width,connectCanvas.height);
+        switch (event.which) {
+            case 37:
+                activity.moveRight();
+                break;
+            case 38:
+                activity.moveUp();
+                break;
+            case 39:
+                activity.moveLeft();
+                break;
+            case 40:
+                activity.moveDown();
+                break;
+        }
+        activity.draw();
+    }
+    window.addEventListener("keydown",control);
+
+
+</script>
+</body>
