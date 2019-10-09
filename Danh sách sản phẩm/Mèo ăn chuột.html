@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="tom.CatchMouse(mickey)">CatchMouse</button>
+<script>
+    let Mouse = function (name,weight,speed,status) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = true;
+        this.call = function () {
+              return "chutchit";
+        }
+
+    }
+    let Cat = function (name,weigt,maxspeed) {
+       this.name = name;
+       this.weight = weigt;
+       this.maxspeed = maxspeed;
+       this.call = function () {
+           return "meomeo";
+       }
+       this.CatchMouse = function () {
+           console.log(mickey);
+           if (this.maxspeed>mickey.speed) {
+               console.log("Catched a mouse");
+               tom.EatMouse()
+           }
+           else {
+               console.log("Can't catch that mouse")
+           }
+
+       }
+       this.EatMouse = function () {
+           if (mickey.status == true)  {
+               tom.weight += mickey.weight;
+               console.log("eated a mouse");
+               console.log("New weight of cat "+ tom.weight+"kg");
+           }
+           else {
+               console.log("a mouse was death")
+           }
+
+       }
+    }
+    let mickey = new Mouse("Mickey",3,Math.floor((Math.random()*20)+10),true)
+    let tom = new Cat("Tom",7,25)
+
+</script>
+</body>
+</html>
