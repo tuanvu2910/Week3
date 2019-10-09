@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Your account <input id="Check">
+<button onclick="CheckAccount()">Check</button>
+<script>
+    let Youraccount;
+    let checkaccount;
+    function CheckAccount() {
+        Youraccount = document.getElementById("Check").value;
+        checkaccount =/^[_a-z0-9]{6,}$/;
+        if (checkaccount.test(Youraccount)){
+            alert("Account hợp lệ")
+        }else {
+            alert("Account không hợp lệ")
+        }
+      console.log(Youraccount);
+    }
+
+</script>
+</body>
+</html>
